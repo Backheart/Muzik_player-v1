@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muzik Player</title>
+    <link rel="stylesheet" href="./style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Doto:wght@100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+
+
+   
+</head>
+<body>
+ 
+    
+    <div class="container">
+        
+            <div class="player-nav-bar"> 
+                <h1 class="title">MUZIK</h1>
+
+                <p id="play-list-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#"><path d="M640-160q-50 0-85-35t-35-85q0-50 35-85t85-35q11 0 21 1.5t19 6.5v-328h200v80H760v360q0 50-35 85t-85 35ZM120-320v-80h320v80H120Zm0-160v-80h480v80H120Zm0-160v-80h480v80H120Z"/></svg>
+                </p>
+
+            </div>
+
+        <div class="player-body">
+            <audio id="audio" src=""></audio>
+            <div class="player-display">
+                <div class="player-display-song-artist">
+                <div class="song-info">
+                    <p id="player-song-title"></p>
+                    <p id="player-song-artist"></p>
+                    <p id="player-song-duration"></p>
+                    <div id="error-message">error</div>
+                </div>
+                    <img id="song-album-art" src="" alt="">
+                </div>
+                
+
+            </div>
+
+            <div id="play-control">
+
+                <div id="player-button">
+                    
+                    <button id="previous" class="previous" aria-label="Previous" title="previous">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M182-202v-556h106v556H182Zm596 0L360-480l418-278v556ZM672-480Zm0 80v-160l-120 80 120 80Z"/></svg></button>
+
+                    <button id="play-pause" class="play-pause" aria-label="Play-pause" title="play/pause">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M200-312v-336l240 168-240 168Zm320-8v-320h80v320h-80Zm160 0v-320h80v320h-80Z"/></svg></button>
+
+                    <button id="stop" class="stop" aria-label="Stop" title="stop">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M324-636v312-312ZM218-218v-524h524v524H218Zm106-106h312v-312H324v312Z"/></svg></button>
+
+
+                    <button id="next" class="next" aria-label="Next" title="next">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M672-202v-556h106v556H672Zm-490 0v-556l418 278-418 278Zm106-278Zm0 80 120-80-120-80v160Z"/></svg></button>
+                </div>
+
+                <div class="lower-buttons">
+                    <p id="shuffle" class="shuffle" aria-label="Shuffle" title="shuffle">
+                        
+                        <svg id="shuffle-off" class="shuffle-off" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M560-160v-80h104L537-367l57-57 126 126v-102h80v240H560Zm-344 0-56-56 504-504H560v-80h240v240h-80v-104L216-160Zm151-377L160-744l56-56 207 207-56 56Z"/></svg>
+
+                        <svg id="shuffle-on" class="shuffle-on"  style="display: none;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-40q-33 0-56.5-23.5T40-120v-720q0-33 23.5-56.5T120-920h720q33 0 56.5 23.5T920-840v720q0 33-23.5 56.5T840-40H120Zm440-120h240v-240h-80v102L594-424l-57 57 127 127H560v80Zm-344 0 504-504v104h80v-240H560v80h104L160-216l56 56Zm151-377 56-56-207-207-56 56 207 207Z"/>
+                        </svg>
+                    
+                    </p>
+
+                    <p id="repeat" class="repeat" aria-label="Repeat" title="repeat">
+                        
+                        <svg id="repeat-off" class="repeat-off" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M280-80 120-240l160-160 56 58-62 62h406v-160h80v240H274l62 62-56 58Zm-80-440v-240h486l-62-62 56-58 160 160-160 160-56-58 62-62H280v160h-80Z"/>
+                        </svg>
+
+                        <svg id="repeat-on" class="repeat-on" style="display: none;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-40q-33 0-56.5-23.5T40-120v-720q0-33 23.5-56.5T120-920h720q33 0 56.5 23.5T920-840v720q0 33-23.5 56.5T840-40H120Zm160-40 56-58-62-62h486v-240h-80v160H274l62-62-56-58-160 160L280-80Zm-80-440h80v-160h406l-62 62 56 58 160-160-160-160-56 58 62 62H200v240Z"/></svg>
+
+                    </p>
+                </div>
+
+                <progress id="progress" value="0" max="100" title="progress bar"></progress> 
+            </div>
+            
+        
+            
+        </div>
+
+      
+    </div>
+
+    <div class="play-list-container" >
+        <div class="play-list ">
+            <h3 class="play-list-title">Play List</h3>
+            <div class="play-list-bar">
+
+                
+                <p id="add-song-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M520-400h80v-120h120v-80H600v-120h-80v120H400v80h120v120ZM320-240q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"/></svg></p>
+
+                <p id="remove-song-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></p>
+
+                <ul id="playlist-songs">
+                   <li draggable="true" data-index="0"></li>
+                </ul>
+
+        
+            </div>
+
+        </div>
+
+       
+
+    </div>
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>

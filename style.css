@@ -1,0 +1,302 @@
+ *{
+  margin: 0;
+} 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+:root {
+  /* colors */
+  --primary-color: #dfdfe2;
+  --secondary-color: #ffffff;
+  --app-background-color: #2d0246;
+  --background-color: #1b1b32;
+  --foreground-color: #190127;
+  --highlight-color: #f1be32;
+--solid-color:  #661a92;
+  /* font sizes */
+  --root-font-size: 16px;
+  font-size: var(--root-font-size);
+
+  /* font-families */
+  --font-headline: "Roboto Mono", monospace;
+  --font-family: "Lato", sans-serif;
+}
+
+body{
+  height: 100vh;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+
+  
+
+}
+
+h1, h3, #player-song-title, #player-song-duration{
+  color: #dcbbf0;
+  
+}
+
+.player-nav-bar{
+  width: 100%;
+display: flex;
+justify-content:space-around;
+/* gap: 100px; */
+margin: 16px;
+}
+
+h1,#player-song-title, #player-song-artist,  #player-song-duration{
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal
+}
+/* h3{
+  text-align: center;
+} */
+#player-song-duration{
+  font-size: 2rem;
+}
+#player-song-title{
+  font-size: 1rem;
+}
+
+ /* h3{
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
+} */
+#player-song-artist{
+color: #f1be32;
+}
+
+
+
+.container{
+  background-color: var(--solid-color);
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  height: 410px;
+  width: 330px;
+  border-radius: 8px;
+}
+.player-body{
+  background-color: var(--app-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+  height: 400px;
+  width: 300px;
+padding: 10px;
+border-radius: 8px;
+
+}
+
+button{
+ 
+  background: transparent;
+  width: 70px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button svg{
+ fill: #dcbbf0;
+}
+button:hover{
+background-color: #f1be3235;
+}
+
+p svg{ 
+ cursor: pointer;
+}
+p svg:active{
+  fill: #dcbbf0;
+}
+
+/* [aria-label] {
+  background-color: rgba(119, 119, 114, 0.385);
+} */
+
+
+button:focus:focus {
+  outline-style:groove;
+  outline-width: 1px;
+  outline-color:var(--highlight-color);
+}
+button:active{
+  background-color:#cda7e4;
+}
+
+#play-control{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.play-list-container{
+  position: relative;
+  bottom: 22px;
+  z-index: -5;
+  /* display: none; */
+}
+
+
+.play-list{
+  background-color: var(--solid-color);
+  height: 0px;
+  width: 350px;
+padding: 10px;
+border-radius: 8px;
+/* display: none; */
+
+
+transition: height.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.play-list.open{
+  height: 250px;
+ 
+}
+
+.play-list-bar{
+ 
+  background-color: var(--foreground-color);
+  height: 0;
+  width: 350px;
+  border-radius: 8px;
+  display: none;
+  transition: height.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.play-list-title{
+  text-align: center;
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
+  display: none;
+margin: 18px 0 8px 0;
+}
+
+.play-list-title.open{
+  display: block;
+}
+.play-list-bar.open{
+  height: 193px;
+  display: block;
+}
+
+#play-list-button{ 
+  fill:#dcbbf0;
+  cursor: pointer;
+}
+
+#play-list-button:active{  
+  fill:#2d0246;
+}
+
+
+.play-list-corection{
+  display: flex;
+}
+
+#error-message{
+  display: none;
+ color: white;
+}
+ .lower-buttons{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+/* gap: 4px; */
+justify-content:space-between;
+margin: 8px;
+ }
+
+ .player-display-song-artist{
+  display: grid;
+grid-template-columns: 1fr;
+ grid-template-rows: 1fr;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  align-items: center;
+  justify-items: center;
+}
+ /* .song-info-container{
+    position: relative;
+  width: 300px;
+  height: 300px;
+
+ } */
+
+ #song-album-art{
+ 
+border-radius: 16px;
+/* border: #cda7e4 solid 2px; */
+  width: 310px;
+  height: 220px;
+  object-fit: cover;
+  filter: brightness(0.3); /* Optional: darken the album art */
+grid-area: 1 /1/ 2 /2;
+  
+ }
+
+ .song-info {
+display: flex;
+flex-direction: column;
+text-align: center;
+ z-index: 1;
+
+  grid-area: 1 /1/ 2 /2;
+}
+
+/* #playlist{
+  color: white
+} */
+
+
+ul   {
+  list-style: none;
+  padding: 1px;
+  margin: 1px; 
+  list-style: none;
+  
+}
+
+
+#playlist-songs li{
+  color: white;
+padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: move; /* Add a move cursor */
+  background-color: #f1be3258;
+  margin: 4px; 
+
+border-radius: 4px;
+
+}
+
+#playlist-songs li.dragging {
+  opacity: 0.5;
+  border: 2px solid #ccc;
+ 
+}
+
